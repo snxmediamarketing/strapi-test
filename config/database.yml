@@ -81,6 +81,7 @@ test:
 #
 production:
   <<: *default
-  database: strapi_test_production
-  username: strapi_test
-  password: <%= ENV["STRAPI_TEST_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
+  database: <%= ENV['DATABASE_NAME'] %>
+  username: <%= ENV['DATABASE_USERNAME'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
